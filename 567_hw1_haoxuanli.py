@@ -12,7 +12,6 @@ class Hw1:
         l = sorted([a, b, c])
         a, b, c = l[0], l[1], l[2]
         result = []
-        print(l)
         if a + b > c:
             if a ** 2 + b ** 2 == c ** 2:
                 result.append("right")
@@ -39,6 +38,3 @@ class MyTest(TestCase):
         self.assertEqual(["isosceles"], Hw1.classify_triangle(1, 5, 5))
         self.assertEqual(["scalene"], Hw1.classify_triangle(2, 6, 5))
         self.assertEqual(["isosceles", "equilateral"], Hw1.classify_triangle(3, 3, 3))
-        #self.assertEqual(["right", "isosceles"], Hw1.classify_triangle(1, math.sqrt(2), 1))
-        #self.assertTrue(2 == math.sqrt(2) * math.sqrt(2))
-        print(math.sqrt(2) * math.sqrt(2))
