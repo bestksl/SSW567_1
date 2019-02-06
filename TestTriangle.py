@@ -8,7 +8,8 @@ The primary goal of this file is to demonstrate a simple unittest implementation
 """
 
 import unittest
-from HW2.Triangle import classifyTriangle
+from Triangle import classifyTriangle
+
 
 # This code implements the unit test functionality
 # https://docs.python.org/3/library/unittest.html has a nice description of the framework
@@ -19,12 +20,16 @@ class TestTriangles(unittest.TestCase):
 
     def testRightTriangleA(self):
         self.assertEqual(classifyTriangle(3, 4, 5), 'Right', '3,4,5 is a Right triangle')
+        self.assertEqual(classifyTriangle(6, 8, 10), 'Right', '6,8,10 is a Right triangle')
 
     def testRightTriangleB(self):
         self.assertEqual(classifyTriangle(5, 3, 4), 'Right', '5,3,4 is a Right triangle')
+        self.assertEqual(classifyTriangle(10, 6, 8), 'Right', '10,6,8 is a Right triangle')
 
     def testEquilateralTriangles(self):
         self.assertEqual(classifyTriangle(1, 1, 1), 'Equilateral', '1,1,1 should be equilateral')
+        self.assertEqual(classifyTriangle(100, 100, 100), 'Equilateral', '100,100,100 should be equilateral')
+        self.assertEqual(classifyTriangle(-1, -1, -1), 'InvalidInput', '-1,-1,-1 should not be equilateral')
 
 
 if __name__ == '__main__':
